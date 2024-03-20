@@ -51,11 +51,10 @@ class ticket_system(commands.Cog):
 
         ticket_embed.set_footer(text="Powered by Lifeservices")
 
-        msg = await ctx.respond(embed=ticket_embed, components=components)
+        await ctx.respond(embed=ticket_embed, components=components)
 
     @commands.Cog.on_select('^ticket_option_select_menu$')
     async def select_option(self, ctx: discord.ComponentInteraction, select_menu):
-        print("passed")
         selected_option = select_menu.values[0]
 
         category_id = getattr(config, f"{selected_option}_categoryID", None)

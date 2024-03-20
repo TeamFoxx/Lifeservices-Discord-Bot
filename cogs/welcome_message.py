@@ -43,8 +43,9 @@ class welcome_message(commands.Cog):
         avatar_y = (height - avatar_height) // 2
         background.paste(avatar_image, (avatar_x, avatar_y), avatar_image)
 
-        font = ImageFont.truetype("arial.ttf", 90)
-        font2 = ImageFont.truetype("arial.ttf", 50)
+        font_path = "./fonts/Alata-Regular.ttf"
+        font = ImageFont.truetype(font_path, 90)
+        font2 = ImageFont.truetype(font_path, 50)
 
         draw.text((230, 55), f"Willkommen, {member.name}!", fill="#ff6a00", font=font)
 
